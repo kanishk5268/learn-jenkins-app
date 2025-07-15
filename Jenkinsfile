@@ -25,6 +25,7 @@ pipeline {
             steps {
                 sh ''' 
                     echo "This is Test stage"
+                    test -e "learn-jenkins-app/build/index.html" && echo "File exists" || echo "File does not exist" 
                 '''
             }
         }
